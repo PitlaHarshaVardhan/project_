@@ -5,7 +5,7 @@ const cors = require("cors");
 const path = require("path");
 
 const authRoutes = require("./routes/auth");
-const studentRoutes = require("./routes/students");
+const studentRoutes = require("./routes/Students");
 
 const app = express();
 app.use(express.json());
