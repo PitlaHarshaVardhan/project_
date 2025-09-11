@@ -15,7 +15,8 @@ export default function Signup() {
   const submit = async (e) => {
     e.preventDefault();
     try {
-      const res = await API.post("/signup", form);
+      const res = await API.post("/auth/signup", form);
+
       localStorage.setItem("token", res.data.token);
       localStorage.setItem("user", JSON.stringify(res.data.user));
       if (res.data.user.role === "admin") nav("/admin");
