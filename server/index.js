@@ -5,13 +5,17 @@ const cors = require("cors");
 const path = require("path");
 
 const authRoutes = require("./routes/auth");
-const studentRoutes = require("./routes/students");
+const studentRoutes = require("./routes/Students");
 
 const app = express();
 app.use(express.json());
 app.use(
   cors({
-    origin: "http://localhost:3000", // frontend origin
+    origin: [
+      "http://localhost:3000", // local dev
+      "https://project-x43h.vercel.app", // deployed frontend
+    ],
+    methods: "GET,POST,PUT,DELETE",
     credentials: true,
   })
 );

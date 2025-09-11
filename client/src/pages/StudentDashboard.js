@@ -54,7 +54,10 @@ export default function StudentDashboard() {
         </p>
         {student.profilePic && (
           <img
-            src={`http://localhost:5000${student.profilePic}`}
+            src={`${
+              process.env.REACT_APP_API_URL?.replace("/api", "") ||
+              "http://localhost:5000"
+            }${student.profilePic}`}
             alt="profile"
             className="mt-3 w-32 h-32 rounded-full object-cover shadow"
           />
